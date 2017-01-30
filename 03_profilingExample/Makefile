@@ -1,7 +1,9 @@
 all: modules
+	sleep 0.1
 
 
 modules: module01 module02 module03
+	sleep 0.2
 
 
 module01:

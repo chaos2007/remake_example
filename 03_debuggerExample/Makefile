@@ -1,3 +1,6 @@
+SECRET_VAR_1 = one two three
+SECRET_VAR_2 = four five six
+
 all: modules
 
 
@@ -8,6 +11,7 @@ module01:
 	$(MAKE) -C module01
 
 module02:
+	$(eval SECRET_VAR_2 = seven)
 	$(MAKE) -C module02
 
 module03:

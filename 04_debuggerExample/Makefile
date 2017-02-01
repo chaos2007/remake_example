@@ -1,5 +1,4 @@
-SECRET_VAR_1 = one two three
-SECRET_VAR_2 = four five six
+HELLO = one two three
 
 all: modules
 
@@ -8,13 +7,16 @@ modules: module01 module02 module03
 
 
 module01:
-	$(MAKE) -C module01
+	echo "module01"
+	@echo "$(HELLO)"
 
 module02:
-	$(eval SECRET_VAR_2 = seven)
-	$(MAKE) -C module02
+	$(eval HELLO = seven)
+	echo "module02"
+	@echo "$(HELLO)"
 
 module03:
-	$(MAKE) -C module03
+	echo "module03"
+	@echo "$(HELLO)"
 
 .PHONY: module01 module02 module03 modules all

@@ -6,13 +6,13 @@ LDFLAGS = -lpthread -lgtest -lgtest_main -lpthread
 GCC = g++
 
 all: $(SOURCES) $(EXECUTABLE)
-	./$(EXECUTABLE)
+	@./$(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(GCC) $(OBJECTS) $(LDFLAGS) -o $@
+	@$(GCC) $(OBJECTS) $(LDFLAGS) -o $@
 
 .cpp.o:
-	$(GCC) $(FLAGS) $(LDFLAGS) $< -o $@
+	@$(GCC) $(FLAGS) $(LDFLAGS) $< -o $@
 
 clean:
-	rm -rf hello *.o
+	@rm -rf hello *.o
